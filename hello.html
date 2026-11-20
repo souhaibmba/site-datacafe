@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Formation Git – Bienvenue chez Data Café">
+
+	<title>Formation Git | Data Café</title>
+
+	<link rel="stylesheet" href="./style.css">
+</head>
+<!-- BANNIÈRE DE COMMANDE -->
+<body>
+
+	<!-- EN-TÊTE -->
+	<header id="top-banner">
+		<h1>Bienvenue chez Data Café !</h1>
+
+		<!-- TASSE DE CAFÉ -->
+		<svg class="coffee-cup" role="img" aria-label="Tasse de café"
+		     viewBox="0 0 64 64" width="64" height="64"
+		     fill="none" stroke="currentColor" stroke-width="3"
+		     stroke-linecap="round" stroke-linejoin="round">
+			<!-- Vapeur -->
+			<path d="M20 20c-3-4 3-6 0-10M28 20c-3-4 3-6 0-10M36 20c-3-4 3-6 0-10"/>
+			<!-- Tasse -->
+			<path d="M12 26h32v14a12 12 0 0 1-12 12h-8a12 12 0 0 1-12-12z" fill="currentColor"/>
+			<!-- Anse -->
+			<path d="M44 30h4a6 6 0 0 1 0 12h-4"/>
+			<!-- Soucoupe -->
+			<path d="M8 58h40"/>
+		</svg>
+	</header>
+<section id="order-banner" aria-labelledby="order-title">
+	<h2 id="order-title">Quel café souhaitez-vous commander ?</h2>
+
+	<form id="order-form">
+		<label for="coffee-choice">Votre café :</label>
+		<select id="coffee-choice" name="coffee" required>
+			<option value="">— Choisissez —</option>
+			<option>Espresso</option>
+			<option>Café allongé</option>
+			<option>Cappuccino</option>
+			<option>Latte</option>
+			<option>Mocha</option>
+			<option>Décaféiné</option>
+		</select>
+
+		<button type="submit">Commander</button>
+	</form>
+
+	<p id="order-message" role="status"></p>
+</section>
+	<!-- CONTENU PRINCIPAL -->
+	<main id="content">
+
+	</main>
+<script>
+	const form = document.getElementById("order-form");
+	const message = document.getElementById("order-message");
+
+	form.addEventListener("submit", (event) => {
+		event.preventDefault();
+		const coffee = document.getElementById("coffee-choice").value;
+		message.textContent = `Merci ! Votre ${coffee.toLowerCase()} est en préparation ☕`;
+	});
+</script>
+</body>
+</html>
